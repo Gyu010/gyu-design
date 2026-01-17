@@ -1,0 +1,368 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+body{
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  text-align: center;
+  font-family: "Jeju Gothic", sans-serif;
+  background-color: hsla(0, 2%, 90%, 0.329);
+}
+
+hr {
+  margin: 1rem 0;
+  color: inherit;
+  background-color: currentColor;
+  border: 0;
+  opacity: .25;
+}
+
+.main-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2.5rem;
+  border-bottom: 2px solid hsl(24, 11%, 91%);
+}
+
+.main-logo-text {
+  color:#d27328;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  padding: 1rem;
+}
+
+.header-logo-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.3rem;
+  padding: 1rem;
+  color: rgba(0,0,0,0.55);
+}
+
+.header-menu-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: rgba(0,0,0,0.55);
+}
+
+.header-logo-text.active,
+.header-menu-text.active{
+  color: #d27328;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  margin: 0 auto 2rem;
+  height: 3rem;
+  border-bottom: 2px solid hsl(24, 11%, 91%);
+}
+
+.header-left{
+  display: flex;
+  align-items: center;
+  padding-left: 4rem;
+}
+
+.header-menu-grupe{
+  display: flex;
+  margin: 0;
+  padding: 0.8rem;
+}
+
+.header-menu{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.header-icons{
+  display: flex;
+  align-items: center;
+  gap: 1.3rem;
+  margin-left: auto;
+  padding-right: 5rem;
+  font-size: 1.3rem;
+}
+
+.header-icons i {
+  color: #7c7b79;
+}
+
+.header-logo{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-toggle{
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav-toggle span{
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: rgba(0,0,0,0.55);
+  margin: 5px 0;
+}
+
+.slider {
+  text-align: center;
+  width: 100%;
+  max-width: 1280px;
+  height: 790px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 6rem;
+  background: transparent;
+}
+
+#mainSlider {
+  position: relative;
+}
+
+#mainSlider .track{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  animation: none;
+  transition: transform 450ms ease;
+}
+
+#mainSlider .picture{
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 화살표 */
+#mainSlider .slider-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+  cursor: pointer;
+  font-size: 28px;
+  line-height: 44px;
+  z-index: 5;
+}
+
+#mainSlider .slider-arrow.prev{ left: 16px; }
+#mainSlider .slider-arrow.next{ right: 16px; }
+
+#mainSlider .slider-arrow:hover{
+  background: rgba(255,255,255,0.8);
+}
+
+#mainSlider .slider-dots{
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+#mainSlider .slider-dots .dot{
+  width: 18px;
+  height: 3px;
+  border: 0;
+  background: rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+#mainSlider .slider-dots .dot.is-active{
+  background: rgba(0,0,0,0.7);
+}
+
+.slider-divider{
+  max-width: 1280px;
+  margin: -4rem auto 3rem;
+  height: 3px;
+  width: 50px;
+  background: rgba(0,0,0,0.18);
+}
+
+.container{
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.container p,h5 {
+  color: #7c7b79;
+}
+
+.row-main, .row-main-end {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.row-main { 
+  text-align: left;
+}
+
+.row-main-end{ 
+  flex-direction: row-reverse; text-align: right;
+}
+
+.main-text-container { 
+  padding: 1rem;
+}
+
+.row-main img,
+.row-main-end img{
+  width: 563px;
+  height: 806px;
+  object-fit: cover;
+  display: block;
+}
+
+.main-text { 
+  font-size: 1.3rem; text-align: left;
+}
+.main-end-text { 
+  font-size: 1.3rem; text-align: right;
+}
+
+.footer-container {
+  border-top: 2px solid hsl(24, 11%, 91%);
+}
+
+.footer-text {
+  font-size: 0.7rem;
+  padding-top: 0.5rem;
+  color: #7c7b79;
+}
+
+@media (max-width: 50rem){
+
+  .header-nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+    flex-wrap: wrap;             
+    padding: 0 16px;
+    height: auto;
+  }
+
+  /* 햄버거 버튼 */
+  .nav-toggle{
+    display: block;
+    order: 2;              
+    margin-left: auto;
+    margin-right: 20px;
+    background: transparent;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .nav-toggle span{
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(0,0,0,0.55);
+    margin: 5px 0;
+  }
+
+  .header-left{
+    order: 1;
+    width: auto;
+    padding-left: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header-menu{
+    display: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .header-icons{
+    display: none;
+    order: 4;
+    width: 100%;
+    margin-left: 0;
+    padding-right: 0;
+    gap: 12px;
+    font-size: 1.2rem;
+    justify-content: flex-start;
+  }
+
+  .header-nav.is-open .header-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+    text-align: left;
+  }
+
+  .header-nav.is-open .header-icons{
+    display: flex;
+    padding: 12px 0 0;
+  }
+
+  .header-menu-grupe,
+  .header-icons{
+    width: 100%;
+  }
+
+  #mainSlider.slider{
+    height: auto;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 2.5rem;
+  }
+
+  .slider-divider{
+    margin: -1.5rem auto 2rem;
+  }
+
+  .row-main,
+  .row-main-end{
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .row-main img,
+  .row-main-end img{
+    width: 100%;
+    max-width: 563px;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  .main-text,
+  .main-end-text{
+    text-align: left;
+    font-size: 1.05rem;
+  }
+}
+

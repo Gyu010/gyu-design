@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GYU DESIGN</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-logo">
+      <a href="index.html" class="main-logo-text">GYU DESIGN</a>
+    </div>
+
+    <nav class="header-nav has-burger">
+        <button class="nav-toggle" type="button" aria-label="menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+        </button>
+      <div class="header-left">
+        <div class="header-logo">
+          <a href="index.html" class="header-logo-text active">GYU</a>
+        </div>
+
+        <div class="header-menu-grupe">
+          <ul class="header-menu">
+            <li><a href="html/About.html" class="header-menu-text">ABOUT</a></li>
+            <li><a href="html/PROJECT.html" class="header-menu-text">PROJECT</a></li>
+            <li><a href="html/PROCESS.html" class="header-menu-text">PROCESS</a></li>
+            <li><a href="html/CONTACT.html" class="header-menu-text">CONTACT</a></li>
+          </ul>
+        </div>
+      </div>
+
+        <div class="header-icons">
+              <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram icon"></i>
+              </a>
+
+              <a href="https://goo.gl/maps/efwMe1ktaHfEhPJM6" target="_blank">
+                <i class="fa-solid fa-location-dot icon"></i>
+              </a>
+        </div>
+
+    </nav>
+
+    <div class="slider" id="mainSlider">
+      <div class="track">
+        <img class="picture" src="img/furniture.jpg" alt="">
+        <img class="picture" src="img/apartment.jpg" alt="">
+        <img class="picture" src="img/home.jpg" alt="">
+        <img class="picture" src="img/home-.jpg" alt="">
+      </div>
+
+      <button class="slider-arrow prev" type="button">‹</button>
+      <button class="slider-arrow next" type="button">›</button>
+
+      <div class="slider-dots">
+        <button class="dot is-active" type="button"></button>
+        <button class="dot" type="button"></button>
+        <button class="dot" type="button"></button>
+        <button class="dot" type="button"></button>
+      </div>
+    </div>
+
+    <div class="slider-divider"></div>
+
+    <div class="container">
+      <section class="row-main">
+        <div>
+          <img src="img/main.jpg" alt="" class="main-photo">
+        </div>
+        <div class="main-text-container">
+          <h5 class="main-text">LIFE STYLE</h5> <hr width="100%" size="5%">
+          <p>GYUDESIGN is a lifestyle brand inspired by simplicity and modern lines. <br>
+            Through minimal design and refined home styling, <br>we thoughtfully create refined spaces. <br>
+            Timeless beauty and quiet elegance are woven into everyday life.</p>
+          <hr width="100%" size="3%">
+        </div>
+      </section>
+
+      <section class="row-main-end">
+
+        <div>
+          <img src="img/kitchen.jpg" alt="" class="main-photo">
+        </div>
+
+        <div class="main-text-container">
+          <h5 class="main-end-text">GYU DESIGN IS..</h5> <hr width="100%" size="5%">
+          <p>We create more than simply beautiful spaces. <br>
+            Within spaces completed and those yet to be realized, <br>
+            we continuously imagine new ideals and bring them to life. <br>
+            Grounded in rich experience and driven by young, intuitive designers, <br>
+            we continue to study, explore, and evolve with space.</p>
+          <hr width="100%" size="3%">
+
+        </div>
+      </section>
+
+    </div>
+
+    <footer>
+
+      <div class="footer-container">
+      
+        <div class="footer-text">
+          <span>GYU Design GmbH</span>
+          <span>|</span>
+          <span>Business Registration No. 111-11-1111</span>
+          <span>|</span>
+          <span>Managing Director Gyu</span>
+        </div>
+      
+
+        <div class="footer-text">
+          <span>ⓒ 2015 GYUDESIGN Corp. All Rights Reserved.</span>
+        </div>
+
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const slider = document.querySelector("#mainSlider");
+        if (slider) {
+          const track = slider.querySelector(".track");
+          const slides = Array.from(slider.querySelectorAll(".picture"));
+          const dots = Array.from(slider.querySelectorAll(".dot"));
+          const prev = slider.querySelector(".slider-arrow.prev");
+          const next = slider.querySelector(".slider-arrow.next");
+
+          let index = 0;
+          let timer = null;
+          const INTERVAL = 2000;
+
+          function goTo(i) {
+            index = (i + slides.length) % slides.length;
+            track.style.transform = `translateX(-${index * 100}%)`;
+            dots.forEach((d, idx) => d.classList.toggle("is-active", idx === index));
+          }
+
+          function startAuto() {
+            stopAuto();
+            timer = setInterval(() => goTo(index + 1), INTERVAL);
+          }
+
+          function stopAuto() {
+            if (timer) clearInterval(timer);
+            timer = null;
+          }
+
+          prev.addEventListener("click", () => { goTo(index - 1); startAuto(); });
+          next.addEventListener("click", () => { goTo(index + 1); startAuto(); });
+          dots.forEach((dot, i) => dot.addEventListener("click", () => { goTo(i); startAuto(); }));
+
+          slider.addEventListener("mouseenter", stopAuto);
+          slider.addEventListener("mouseleave", startAuto);
+
+          goTo(0);
+          startAuto();
+        }
+
+        const nav = document.querySelector(".header-nav");
+        const btn = document.querySelector(".nav-toggle");
+        if (nav && btn) {
+          btn.addEventListener("click", () => {
+            nav.classList.toggle("is-open");
+            const opened = nav.classList.contains("is-open");
+            btn.setAttribute("aria-expanded", opened ? "true" : "false");
+          });
+        }
+      });
+    </script>
+
+
+</body>
+</html>

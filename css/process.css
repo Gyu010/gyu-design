@@ -1,0 +1,71 @@
+.process-main,
+.process-main * {
+  text-align: left;
+}
+
+.process-container {
+  max-width: 900px;    
+  margin: 0 auto;
+  padding: 60px 24px; 
+}
+
+.process-title {
+  margin: 0 0 38px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #7c7b79;
+  text-transform: uppercase;
+}
+
+.process-block {
+  margin-bottom: 48px;
+}
+
+.process-step {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #686868;
+}
+
+.process-list {
+  list-style: none;  
+  margin: 0;
+  padding: 0;
+}
+
+.process-list li {
+  position: relative;
+  padding-left: 18px; 
+  line-height: 2.1;
+  color: #686868;
+  font-size: 13px;
+}
+
+.process-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0.12em;
+  color: #686868;
+}
+
+/* 모바일 */
+@media screen and (max-width: 50rem) {
+  .process-container {
+    padding: 40px 20px;
+  }
+
+  .process-title {
+    margin-bottom: 28px;
+  }
+
+  .process-block {
+    margin-bottom: 40px;
+  }
+
+  .process-list li {
+    font-size: 12.5px;
+    line-height: 2;
+  }
+}

@@ -1,0 +1,90 @@
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css);
+
+.projects {
+  padding: 0 40px 80px;
+}
+
+.projects-wrap {
+  width: 100%;
+  max-width: 1280px; 
+  margin: 0 auto;
+}
+
+.projects-title {
+  margin: 0 0 14px;
+  color: #7c7b79;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects-hr {
+  width: 4%;
+  margin: 0 auto 40px;
+  height: 4px;
+  border: 0;
+  background-color: #703b12;
+  opacity: 1;
+}
+
+/* 4열 고정 + 가운데 정렬 */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 275px);
+  gap: 24px;
+  justify-content: center;
+}
+
+.project-card {
+  display: block;
+  width: 275px;
+  border-radius: 0;                 
+  overflow: hidden;
+  text-decoration: none;
+  transform: translateZ(0);
+  transition: transform 200ms ease-in-out;
+}
+
+.project-card-img {
+  width: 275px;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card-body {
+  background-color: hsla(0, 2%, 90%, 0.329);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 12px 10px;
+}
+
+
+.project-card-text {
+  margin: 0;
+  font-size: 13px;
+  color: #7c7b79;
+  text-align: center;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* ===== 반응형: 화면 좁아지면 3열/2열/1열 ===== */
+@media (max-width: 1200px) {
+  .projects-grid { 
+    grid-template-columns: repeat(3, 275px); 
+  }
+}
+@media (max-width: 900px) {
+  .projects-grid { 
+    grid-template-columns: repeat(2, 275px); 
+  }
+}
+@media (max-width: 600px) {
+  .projects { 
+    padding: 0 20px 60px; 
+  }
+  .projects-grid { 
+    grid-template-columns: 275px; 
+  }
+}
